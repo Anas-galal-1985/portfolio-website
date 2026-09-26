@@ -1,0 +1,220 @@
+.experience-page {
+    padding-top: 80px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-lg) 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: var(--border-color);
+    transform: translateX(-50%);
+}
+
+[dir="rtl"] .timeline::before {
+    /* Ensure timeline line stays centered in RTL */
+    left: 50%;
+    transform: translateX(50%);
+}
+
+
+.timeline-item {
+    position: relative;
+    margin-bottom: var(--spacing-2xl);
+    width: 50%;
+    padding-right: var(--spacing-xl);
+}
+
+.timeline-item:nth-child(even) {
+    margin-left: 50%;
+    padding-right: 0;
+    padding-left: var(--spacing-xl);
+}
+
+.timeline-marker {
+    position: absolute;
+    top: 20px;
+    right: -6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    border: 2px solid var(--bg-primary);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+    z-index: 1;
+}
+
+.timeline-item:nth-child(even) .timeline-marker {
+    right: auto;
+    left: -6px;
+}
+
+.timeline-content {
+    position: relative;
+    padding: var(--spacing-lg);
+    transition: all var(--transition-normal);
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.timeline-item:nth-child(even) .timeline-content:hover {
+    transform: translateY(-5px);
+}
+
+.timeline-header h3 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.company-name {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.timeline-date {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin: var(--spacing-sm) 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.job-type {
+    margin-left: auto;
+    padding: 0.25rem 0.75rem;
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius-lg);
+    font-size: 0.8rem;
+}
+
+[dir="rtl"] .job-type {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+
+.timeline-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.timeline-details li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.timeline-details li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+[dir="rtl"] .timeline-details li {
+    padding-left: 0;
+    padding-right: 1.5rem;
+}
+
+[dir="rtl"] .timeline-details li::before {
+    left: auto;
+    right: 0;
+}
+
+/* RTL Specific Timeline adjustments */
+[dir="rtl"] .timeline-marker {
+    right: auto;
+    left: -6px;
+}
+
+
+[dir="rtl"] .timeline-item {
+    padding-right: 0;
+    padding-left: var(--spacing-xl);
+}
+
+[dir="rtl"] .timeline-item:nth-child(even) {
+    margin-left: 0;
+    margin-right: 50%;
+    padding-left: 0;
+    padding-right: var(--spacing-xl);
+}
+
+[dir="rtl"] .timeline-item:nth-child(even) .timeline-marker {
+    left: auto;
+    right: -6px;
+}
+
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+
+    [dir="rtl"] .timeline::before {
+        left: auto;
+        right: 20px;
+        transform: none;
+    }
+
+    .timeline-item {
+        width: 100%;
+        margin-left: 0;
+        padding-right: 0;
+        padding-left: 50px;
+    }
+
+    [dir="rtl"] .timeline-item {
+        padding-left: 0;
+        padding-right: 50px;
+    }
+
+    .timeline-item:nth-child(even) {
+        margin-left: 0;
+        padding-left: 50px;
+        margin-right: 0;
+        /* Clear RTL margin */
+    }
+
+    [dir="rtl"] .timeline-item:nth-child(even) {
+        margin-right: 0;
+        padding-right: 50px;
+        padding-left: 0;
+    }
+
+    .timeline-marker {
+        left: 14px;
+        right: auto;
+    }
+
+    [dir="rtl"] .timeline-marker {
+        left: auto;
+        right: 14px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-marker {
+        left: 14px;
+    }
+
+    [dir="rtl"] .timeline-item:nth-child(even) .timeline-marker {
+        right: 14px;
+    }
+}
