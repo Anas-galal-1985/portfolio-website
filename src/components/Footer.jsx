@@ -14,7 +14,7 @@ const Footer = () => {
     const socialLinks = [
         { icon: <FiGithub />, url: 'https://github.com/Anas-galal-1985', label: 'GitHub' },
         { icon: <FiLinkedin />, url: 'https://www.linkedin.com/in/anas-galal-7b7937439', label: 'LinkedIn' },
-        { icon: <FiMail />, url: 'mailto:anasxanoos@gmail.com', label: 'Email' }
+        { icon: <FiMail />, url: 'https://mail.google.com/mail/?view=cm&fs=1&to=anasxanoos@gmail.com', label: 'Email' }
     ];
 
     const quickLinks = [

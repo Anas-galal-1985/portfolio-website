@@ -20,16 +20,45 @@ const Contact = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus('sending');
 
-        // Simulate API call
-        setTimeout(() => {
-            setStatus('success');
-            setFormData({ name: '', email: '', message: '' });
-            setTimeout(() => setStatus(''), 3000);
-        }, 1500);
+        try {
+            const response = await fetch('https://formsubmit.co/ajax/anasxanoos@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
+                    _subject: 'رسالة جديدة من موقعك الشخصي',
+                    _template: 'table'
+                })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                if (data.success === 'true' || data.success === true || response.status === 200) {
+                    setStatus('success');
+                    setFormData({ name: '', email: '', message: '' });
+                    setTimeout(() => setStatus(''), 5000);
+                } else {
+                    setStatus('error');
+                    setTimeout(() => setStatus(''), 5000);
+                }
+            } else {
+                setStatus('error');
+                setTimeout(() => setStatus(''), 5000);
+            }
+        } catch (error) {
+            console.error('Error sending message:', error);
+            setStatus('error');
+            setTimeout(() => setStatus(''), 5000);
+        }
     };
 
     return (
@@ -97,7 +126,9 @@ const Contact = () => {
                                         <FiLinkedin />
                                     </a>
                                     <a
-                                        href="mailto:anasxanoos@gmail.com"
+                                        href="https://mail.google.com/mail/?view=cm&fs=1&to=anasxanoos@gmail.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="social-link"
                                         aria-label="Email"
                                     >
@@ -147,15 +178,32 @@ const Contact = () => {
                                 ></textarea>
                             </div>
 
+                            {status === 'success' && (
+                                <div className="status-alert success">
+                                    {t.contact.success}
+                                </div>
+                            )}
+
+                            {status === 'error' && (
+                                <div className="status-alert error">
+                                    {t.contact.error}
+                                </div>
+                            )}
+
                             <button
                                 type="submit"
                                 className={`btn btn-primary submit-btn ${status}`}
                                 disabled={status === 'sending'}
                             >
                                 {status === 'sending' ? (
-                                    t.contact.sending
+                                    <>
+                                        <span className="spinner"></span>
+                                        <span>{t.contact.sending}</span>
+                                    </>
                                 ) : status === 'success' ? (
                                     t.contact.success
+                                ) : status === 'error' ? (
+                                    t.contact.error
                                 ) : (
                                     <>
                                         {t.contact.send}
