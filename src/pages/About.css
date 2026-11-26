@@ -26,16 +26,13 @@
     border-radius: var(--border-radius-xl);
     overflow: hidden;
     max-width: 400px;
-    /* Limit width */
     margin: 0 auto;
-    /* Center if needed */
     box-shadow: var(--shadow-xl);
     border: 4px solid var(--bg-card);
 }
 
 .image-placeholder {
     aspect-ratio: 1;
-    /* Keep square or change to auto for original aspect ratio if prefered */
     background: var(--bg-tertiary);
     display: flex;
     align-items: center;
@@ -137,6 +134,12 @@
     padding: var(--spacing-lg);
     position: relative;
     overflow: hidden;
+}
+
+.spec-icon {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
 }
 
 .spec-number {

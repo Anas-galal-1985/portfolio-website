@@ -4,29 +4,51 @@ import { useLanguage } from '../context/LanguageContext';
 import './Education.css';
 
 const Education = () => {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
 
-    const educationData = [
+    const educationData = language === 'ar' ? [
         {
             type: 'degree',
-            title: 'Bachelor of Science in Computer Science',
-            institution: 'City University of Technology',
-            year: '2020 - 2024',
-            description: 'Graduated with Honors. Specialized in Artificial Intelligence and Software Engineering.'
+            title: 'بكالوريوس علوم الحاسوب / تقنية المعلومات',
+            institution: 'جامعة إب',
+            year: '2022 – 2026',
+            description: 'التركيز على هندسة البرمجيات، الذكاء الاصطناعي، الرؤية الحاسوبية، وتصميم النظم وقواعد البيانات.'
         },
         {
             type: 'certification',
-            title: 'AWS Certified Solutions Architect',
-            institution: 'Amazon Web Services',
-            year: '2023',
-            description: 'Professional certification for designing distributed systems on AWS.'
+            title: 'دبلوم المحاسبة والأنظمة المحاسبية',
+            institution: 'معهد وي كان',
+            year: '2026',
+            description: 'يشمل المحاسبة المالية (1 و ب)، المحاسبة الإدارية، محاسبة شركات الأشخاص والأموال، محاسبة التكاليف، الإكسل المحاسبي، والتطبيق العملي على الأنظمة المحاسبية (المتكامل بلس – الأونكس برو).'
         },
         {
-            type: 'course',
-            title: 'Machine Learning Specialization',
-            institution: 'Coursera (Stanford Online)',
-            year: '2022',
-            description: 'Deep dive into supervised learning, neural networks, and ML algorithms.'
+            type: 'certification',
+            title: 'الرخصة الدولية لقيادة الحاسوب (ICDL)',
+            institution: 'معهد توب',
+            year: '2022 – 2023',
+            description: ''
+        }
+    ] : [
+        {
+            type: 'degree',
+            title: 'B.Sc. in Computer Science / Information Technology',
+            institution: 'Ibb University',
+            year: '2022 – 2026',
+            description: 'Focus on Software Engineering, Artificial Intelligence, Computer Vision, and Systems & Database Design.'
+        },
+        {
+            type: 'certification',
+            title: 'Diploma in Accounting & Accounting Systems',
+            institution: 'We Can Institute',
+            year: '2026',
+            description: 'Covers Financial Accounting (1 & 2), Managerial Accounting, Partnership & Corporate Accounting, Cost Accounting, Accounting Excel, and hands-on practice with accounting systems (Al-Mutakamel Plus – Onyx Pro).'
+        },
+        {
+            type: 'certification',
+            title: 'International Computer Driving License (ICDL)',
+            institution: 'Top Institute',
+            year: '2022 – 2023',
+            description: ''
         }
     ];
 
@@ -52,7 +74,7 @@ const Education = () => {
                                     <span className="card-year">{item.year}</span>
                                     <h3>{item.title}</h3>
                                     <h4 className="institution">{item.institution}</h4>
-                                    <p className="description">{item.description}</p>
+                                    {item.description && <p className="description">{item.description}</p>}
                                 </div>
                             </div>
                         ))}

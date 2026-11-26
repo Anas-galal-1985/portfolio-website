@@ -50,8 +50,8 @@ const Contact = () => {
                                     <FiMail />
                                 </div>
                                 <div className="info-details">
-                                    <h4>Email</h4>
-                                    <a href="mailto:your.email@example.com">anasxanoos@gmail.com</a>
+                                    <h4>{t.contact.emailLabel}</h4>
+                                    <a href="mailto:anasxanoos@gmail.com">anasxanoos@gmail.com</a>
                                 </div>
                             </div>
 
@@ -60,8 +60,8 @@ const Contact = () => {
                                     <FiPhone />
                                 </div>
                                 <div className="info-details">
-                                    <h4>Phone</h4>
-                                    <a href="tel:+1234567890">+(967) 776-455-364</a>
+                                    <h4>{t.contact.phoneLabel}</h4>
+                                    <a href="tel:+967776455364">+(967) 776-455-364</a>
                                 </div>
                             </div>
 
@@ -70,8 +70,8 @@ const Contact = () => {
                                     <FiMapPin />
                                 </div>
                                 <div className="info-details">
-                                    <h4>Location</h4>
-                                    <p>AL-Sabel, IBB, YEMEN</p>
+                                    <h4>{t.contact.locationLabel}</h4>
+                                    <p>{t.contact.locationValue}</p>
                                 </div>
                             </div>
                         </div>

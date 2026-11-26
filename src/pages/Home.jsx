@@ -1,21 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowRight, FiDownload, FiCode, FiCpu, FiDatabase } from 'react-icons/fi';
+import { FiArrowRight, FiDownload, FiCode, FiCpu, FiDatabase, FiSmartphone } from 'react-icons/fi';
 import MyPhoto from '../assets/My_photo.jpg';
 import { useLanguage } from '../context/LanguageContext';
 import './Home.css';
 
 const Home = () => {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         setIsVisible(true);
     }, []);
 
-    const features = [
-        { icon: <FiCode />, title: 'Web Development', color: '#3b82f6' },
-        { icon: <FiCpu />, title: 'AI & ML', color: '#8b5cf6' },
+    const features = language === 'ar' ? [
+        { icon: <FiCode />, title: 'هندسة البرمجيات', color: '#3b82f6' },
+        { icon: <FiCpu />, title: 'الذكاء الاصطناعي والرؤية الحاسوبية', color: '#8b5cf6' },
+        { icon: <FiSmartphone />, title: 'تطوير الويب والموبايل', color: '#10b981' },
+        { icon: <FiDatabase />, title: 'تصميم قواعد البيانات', color: '#0ea5e9' }
+    ] : [
+        { icon: <FiCode />, title: 'Software Engineering', color: '#3b82f6' },
+        { icon: <FiCpu />, title: 'AI & Computer Vision', color: '#8b5cf6' },
+        { icon: <FiSmartphone />, title: 'Web & Mobile Dev', color: '#10b981' },
         { icon: <FiDatabase />, title: 'Database Design', color: '#0ea5e9' }
     ];
 
@@ -27,7 +33,7 @@ const Home = () => {
                         <div className={`hero-text ${isVisible ? 'animate-fadeInUp' : ''}`}>
                             <p className="greeting">{t.home.greeting}</p>
                             <h1 className="hero-title">
-                                <span className="name-highlight">ANAS GALAL</span>
+                                <span className="name-highlight">{t.home.name}</span>
                             </h1>
                             <h2 className="hero-subtitle">{t.home.title}</h2>
                             <p className="hero-description">{t.home.description}</p>
@@ -51,15 +57,15 @@ const Home = () => {
                             <div className="visual-container">
                                 <div className="floating-card card-1">
                                     <FiCode className="card-icon" />
-                                    <span>React</span>
+                                    <span>{language === 'ar' ? 'برمجيات' : 'Software'}</span>
                                 </div>
                                 <div className="floating-card card-2">
                                     <FiCpu className="card-icon" />
-                                    <span>AI/ML</span>
+                                    <span>{language === 'ar' ? 'ذكاء اصطناعي' : 'AI/ML'}</span>
                                 </div>
                                 <div className="floating-card card-3">
                                     <FiDatabase className="card-icon" />
-                                    <span>Database</span>
+                                    <span>{language === 'ar' ? 'قواعد بيانات' : 'Database'}</span>
                                 </div>
                                 <div className="profile-circle">
                                     <div className="circle-gradient"></div>

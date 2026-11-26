@@ -2,13 +2,16 @@ import React from 'react';
 import {
     SiPython, SiJavascript, SiReact, SiNodedotjs, SiDjango,
     SiMongodb, SiPostgresql, SiTensorflow, SiDocker, SiGit,
-    SiTypescript, SiCplusplus, SiFlask, SiExpress,
-    SiMysql, SiRedis, SiPytorch, SiKeras,
-    SiKubernetes, SiAmazonaws, SiLinux, SiVim,
+    SiTypescript, SiCplusplus, SiExpress,
+    SiMysql, SiPytorch, SiKeras,
+    SiLinux,
     SiHtml5, SiCss3, SiCsharp, SiDart, SiPhp,
     SiVisualstudiocode, SiFlutter, SiVisualstudio,
-    SiKalilinux, SiGooglecolab, SiAnaconda, SiGithub
+    SiKalilinux, SiGooglecolab, SiAnaconda, SiGithub,
+    SiFastapi, SiStreamlit, SiOpencv, SiFirebase,
+    SiAndroidstudio, SiC
 } from 'react-icons/si';
+import { FiTerminal, FiBox, FiTarget, FiCpu, FiDatabase } from 'react-icons/fi';
 import { useLanguage } from '../context/LanguageContext';
 import './Skills.css';
 
@@ -19,11 +22,12 @@ const Skills = () => {
         programming: [
             { name: 'Python', icon: <SiPython />, color: '#3776AB' },
             { name: 'C#', icon: <SiCsharp />, color: '#239120' },
+            { name: 'C++', icon: <SiCplusplus />, color: '#00599C' },
+            { name: 'C', icon: <SiC />, color: '#A8B9CC' },
             { name: 'JavaScript', icon: <SiJavascript />, color: '#F7DF1E' },
             { name: 'TypeScript', icon: <SiTypescript />, color: '#3178C6' },
-            { name: 'C++', icon: <SiCplusplus />, color: '#00599C' },
-            { name: 'Dart', icon: <SiDart />, color: '#0175C2' },
             { name: 'PHP', icon: <SiPhp />, color: '#777BB4' },
+            { name: 'Dart', icon: <SiDart />, color: '#0175C2' },
             { name: 'HTML5', icon: <SiHtml5 />, color: '#E34F26' },
             { name: 'CSS3', icon: <SiCss3 />, color: '#1572B6' }
         ],
@@ -31,36 +35,38 @@ const Skills = () => {
             { name: 'React', icon: <SiReact />, color: '#61DAFB' },
             { name: 'Flutter', icon: <SiFlutter />, color: '#02569B' },
             { name: 'Node.js', icon: <SiNodedotjs />, color: '#339933' },
+            { name: 'Express', icon: <SiExpress />, color: '#000000' },
             { name: 'Django', icon: <SiDjango />, color: '#092E20' },
-            { name: 'Flask', icon: <SiFlask />, color: '#000000' },
-            { name: 'Express', icon: <SiExpress />, color: '#000000' }
+            { name: 'FastAPI', icon: <SiFastapi />, color: '#009688' },
+            { name: 'Streamlit', icon: <SiStreamlit />, color: '#FF4B4B' }
         ],
         databases: [
-            { name: 'MongoDB', icon: <SiMongodb />, color: '#47A248' },
             { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#4169E1' },
             { name: 'MySQL', icon: <SiMysql />, color: '#4479A1' },
-            { name: 'Redis', icon: <SiRedis />, color: '#DC382D' }
+            { name: 'MongoDB', icon: <SiMongodb />, color: '#47A248' },
+            { name: 'SQL', icon: <FiDatabase />, color: '#336791' }
         ],
         ai: [
-            { name: 'TensorFlow', icon: <SiTensorflow />, color: '#FF6F00' },
             { name: 'PyTorch', icon: <SiPytorch />, color: '#EE4C2C' },
+            { name: 'TensorFlow', icon: <SiTensorflow />, color: '#FF6F00' },
             { name: 'Keras', icon: <SiKeras />, color: '#D00000' },
+            { name: 'YOLOv8', icon: <FiTarget />, color: '#00DCFF' },
+            { name: 'OpenCV', icon: <SiOpencv />, color: '#5C3EE8' },
+            { name: 'ArcFace', icon: <FiCpu />, color: '#FF6B6B' },
             { name: 'Google Colab', icon: <SiGooglecolab />, color: '#F9AB00' },
             { name: 'Anaconda', icon: <SiAnaconda />, color: '#44A833' }
         ],
         devops: [
             { name: 'Docker', icon: <SiDocker />, color: '#2496ED' },
-            { name: 'Kubernetes', icon: <SiKubernetes />, color: '#326CE5' },
-            { name: 'AWS', icon: <SiAmazonaws />, color: '#FF9900' }
-        ],
-        tools: [
+            { name: 'CI/CD', icon: <FiTerminal />, color: '#4CAF50' },
             { name: 'Git', icon: <SiGit />, color: '#F05032' },
             { name: 'GitHub', icon: <SiGithub />, color: '#181717' },
             { name: 'VS Code', icon: <SiVisualstudiocode />, color: '#007ACC' },
             { name: 'Visual Studio', icon: <SiVisualstudio />, color: '#5C2D91' },
-            { name: 'Kali Linux', icon: <SiKalilinux />, color: '#557C94' },
+            { name: 'Android Studio', icon: <SiAndroidstudio />, color: '#3DDC84' },
+            { name: 'Firebase', icon: <SiFirebase />, color: '#FFCA28' },
             { name: 'Linux', icon: <SiLinux />, color: '#FCC624' },
-            { name: 'Vim', icon: <SiVim />, color: '#019733' }
+            { name: 'Kali Linux', icon: <SiKalilinux />, color: '#557C94' }
         ]
     };
 

@@ -14,9 +14,10 @@ export const translations = {
         // Home Page
         home: {
             greeting: 'Hello, I\'m',
-            title: 'Information Technology Engineer',
-            subtitle: 'Passionate about building innovative solutions with cutting-edge technology',
-            description: 'Specialized in software development, artificial intelligence, and modern web technologies. Dedicated to creating efficient, scalable, and user-friendly applications.',
+            name: 'Anas Galal Yousef',
+            title: 'Software & IT Engineer',
+            subtitle: 'Specialized in building high-quality, scalable technical solutions following software engineering best practices',
+            description: 'A software engineer specializing in developing high-quality, scalable technical solutions following software engineering best practices. I combine web and mobile application development, artificial intelligence and computer vision, and database management.',
             viewProjects: 'View Projects',
             contactMe: 'Contact Me',
             downloadCV: 'Download CV'
@@ -26,18 +27,37 @@ export const translations = {
         about: {
             title: 'About Me',
             subtitle: 'Get to know me better',
-            bio: 'I am an Information Technology Engineer with a passion for innovation and problem-solving. My journey in technology has equipped me with diverse skills in software development, artificial intelligence, and system architecture.',
+            bio: 'A software engineer striving to develop scalable, high-quality technical solutions following software engineering best practices — from system analysis and design to writing clean code. I have hands-on experience in mobile and web application development, building AI systems and data processing, with a strong ability to work within teams and lead them to deliver projects from design through deployment.',
             education: 'Education',
+            educationDegree: 'B.Sc. in Information Technology / Computer Science',
+            educationInstitution: 'Ibb University • 2022-2026',
             specialization: 'Areas of Specialization',
             interests: 'Professional Interests',
             goals: 'Career Goals',
+            goalsText: 'Building innovative AI-powered solutions',
+            goalsSubtext: 'Continuous learning & professional growth',
+            interestsText: 'Open source & community contribution',
+            interestsSubtext: 'Tech community engagement',
             specializations: [
-                'Artificial Intelligence & Machine Learning',
-                'Full-Stack Web Development',
+                'AI & Machine Learning',
                 'Computer Vision & Image Processing',
-                'Cloud Computing & DevOps',
-                'Cybersecurity',
-                'Database Management & Optimization'
+                'Full-Stack Web Development',
+                'Mobile App Development',
+                'Database Architecture & Optimization',
+                'Docker & CI/CD (DevOps)'
+            ],
+            languagesTitle: 'Languages & Soft Skills',
+            languages: [
+                { label: 'Arabic', level: 'Native' },
+                { label: 'English', level: 'Good' }
+            ],
+            softSkills: [
+                'Requirements Analysis',
+                'Analytical Thinking & Problem Solving',
+                'Teamwork',
+                'Self-Learning',
+                'Communication Skills',
+                'Leveraging AI Tools'
             ]
         },
 
@@ -49,9 +69,8 @@ export const translations = {
                 programming: 'Programming Languages',
                 frameworks: 'Frameworks & Libraries',
                 databases: 'Databases',
-                ai: 'AI & Machine Learning',
-                devops: 'DevOps & Deployment',
-                tools: 'Other Tools'
+                ai: 'AI & Computer Vision',
+                devops: 'DevOps & Tools'
             }
         },
 
@@ -63,11 +82,11 @@ export const translations = {
                 all: 'All',
                 web: 'Web',
                 ai: 'AI/ML',
-                mobile: 'Mobile',
-                other: 'Other'
+                mobile: 'Mobile'
             },
-            viewDemo: 'View Demo',
+            viewDemo: 'Live Demo',
             viewCode: 'View Code',
+            viewSite: 'Visit Website',
             viewDocs: 'Documentation',
             technologies: 'Technologies Used'
         },
@@ -103,7 +122,18 @@ export const translations = {
             success: 'Message sent successfully!',
             error: 'Failed to send message. Please try again.',
             info: 'Contact Information',
-            social: 'Social Links'
+            social: 'Social Links',
+            emailLabel: 'Email',
+            phoneLabel: 'Phone',
+            locationLabel: 'Location',
+            locationValue: 'Al-Sabel, Ibb, Yemen'
+        },
+
+        // Footer
+        footer: {
+            quickLinks: 'Quick Links',
+            copyright: 'Anas Galal Yousef. All rights reserved.',
+            location: 'Al-Sabel, Ibb, Yemen'
         },
 
         // Common
@@ -132,9 +162,10 @@ export const translations = {
         // Home Page
         home: {
             greeting: 'مرحباً، أنا',
-            title: 'مهندس تكنولوجيا المعلومات',
-            subtitle: 'شغوف ببناء حلول مبتكرة باستخدام أحدث التقنيات',
-            description: 'متخصص في تطوير البرمجيات والذكاء الاصطناعي وتقنيات الويب الحديثة. ملتزم بإنشاء تطبيقات فعالة وقابلة للتطوير وسهلة الاستخدام.',
+            name: 'أنس جلال يوسف',
+            title: 'مهندس برمجيات وتقنية معلومات',
+            subtitle: 'متخصص في بناء حلول تقنية عالية الجودة وقابلة للتوسع وفق أفضل ممارسات هندسة البرمجيات',
+            description: 'مهندس برمجيات متخصص في تطوير حلول تقنية عالية الجودة وقابلة للتوسع وفق أفضل ممارسات هندسة البرمجيات، أجمع بين تطوير تطبيقات الويب والموبايل، والذكاء الاصطناعي والرؤية الحاسوبية، وإدارة قواعد البيانات.',
             viewProjects: 'عرض المشاريع',
             contactMe: 'تواصل معي',
             downloadCV: 'تحميل السيرة الذاتية'
@@ -143,19 +174,38 @@ export const translations = {
         // About Page
         about: {
             title: 'عني',
-            subtitle: 'تعرف علي أكثر',
-            bio: 'أنا مهندس تكنولوجيا معلومات شغوف بالابتكار وحل المشكلات. رحلتي في التكنولوجيا زودتني بمهارات متنوعة في تطوير البرمجيات والذكاء الاصطناعي وهندسة الأنظمة.',
+            subtitle: 'تعرف عليّ أكثر',
+            bio: 'مهندس برمجيات أسعى لتطوير حلول تقنية قابلة للتوسع وعالية الجودة وفق أفضل ممارسات هندسة البرمجيات من تحليل وتصميم النظم وكتابة الكود النظيف. أمتلك خبرة عملية في تطوير تطبيقات الموبايل والمواقع الإلكترونية، وبناء أنظمة الذكاء الاصطناعي ومعالجة البيانات، مع قدرة عالية على العمل ضمن فرق وقيادتها لتنفيذ المشاريع من التصميم وحتى النشر.',
             education: 'التعليم',
+            educationDegree: 'بكالوريوس تقنية معلومات / علوم حاسوب',
+            educationInstitution: 'جامعة إب • 2022-2026',
             specialization: 'مجالات التخصص',
             interests: 'الاهتمامات المهنية',
             goals: 'الأهداف المهنية',
+            goalsText: 'بناء حلول مبتكرة تعتمد على الذكاء الاصطناعي',
+            goalsSubtext: 'التعلم المستمر والنمو المهني',
+            interestsText: 'المساهمة في المصادر المفتوحة والمجتمع التقني',
+            interestsSubtext: 'المشاركة في المجتمع التقني',
             specializations: [
-                'الذكاء الاصطناعي والتعلم الآلي',
+                'الذكاء الاصطناعي وتعلم الآلة',
+                'الرؤية الحاسوبية ومعالجة الصور',
                 'تطوير الويب الشامل',
-                'رؤية الحاسوب ومعالجة الصور',
-                'الحوسبة السحابية وDevOps',
-                'الأمن السيبراني',
-                'إدارة وتحسين قواعد البيانات'
+                'تطوير تطبيقات الموبايل',
+                'تصميم وإدارة قواعد البيانات',
+                'أتمتة النشر (Docker و CI/CD)'
+            ],
+            languagesTitle: 'اللغات والمهارات الشخصية',
+            languages: [
+                { label: 'العربية', level: 'اللغة الأم' },
+                { label: 'الإنجليزية', level: 'جيد' }
+            ],
+            softSkills: [
+                'تحليل المتطلبات',
+                'التفكير التحليلي وحل المشكلات',
+                'العمل الجماعي',
+                'التعلم الذاتي',
+                'مهارات التواصل',
+                'توظيف أدوات الذكاء الاصطناعي'
             ]
         },
 
@@ -167,9 +217,8 @@ export const translations = {
                 programming: 'لغات البرمجة',
                 frameworks: 'أطر العمل والمكتبات',
                 databases: 'قواعد البيانات',
-                ai: 'الذكاء الاصطناعي والتعلم الآلي',
-                devops: 'DevOps والنشر',
-                tools: 'أدوات أخرى'
+                ai: 'الذكاء الاصطناعي والرؤية الحاسوبية',
+                devops: 'DevOps وأدوات التطوير'
             }
         },
 
@@ -181,11 +230,11 @@ export const translations = {
                 all: 'الكل',
                 web: 'ويب',
                 ai: 'ذكاء اصطناعي',
-                mobile: 'موبايل',
-                other: 'أخرى'
+                mobile: 'موبايل'
             },
             viewDemo: 'عرض تجريبي',
             viewCode: 'عرض الكود',
+            viewSite: 'زيارة الموقع',
             viewDocs: 'التوثيق',
             technologies: 'التقنيات المستخدمة'
         },
@@ -221,7 +270,18 @@ export const translations = {
             success: 'تم إرسال الرسالة بنجاح!',
             error: 'فشل إرسال الرسالة. يرجى المحاولة مرة أخرى.',
             info: 'معلومات الاتصال',
-            social: 'روابط التواصل الاجتماعي'
+            social: 'روابط التواصل الاجتماعي',
+            emailLabel: 'البريد الإلكتروني',
+            phoneLabel: 'الهاتف',
+            locationLabel: 'الموقع',
+            locationValue: 'السبل، إب، اليمن'
+        },
+
+        // Footer
+        footer: {
+            quickLinks: 'روابط سريعة',
+            copyright: 'أنس جلال يوسف. جميع الحقوق محفوظة.',
+            location: 'السبل، إب، اليمن'
         },
 
         // Common

@@ -39,7 +39,7 @@ const Navbar = () => {
                 <div className="navbar-content">
                     <Link to="/" className="logo">
                         <span className="logo-text">&lt;</span>
-                        <span className="logo-name">IT Engineer</span>
+                        <span className="logo-name">{language === 'ar' ? 'أنس جلال' : 'Anas Galal'}</span>
                         <span className="logo-text">/&gt;</span>
                     </Link>
 

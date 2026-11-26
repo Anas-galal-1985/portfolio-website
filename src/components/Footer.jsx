@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 import './Footer.css';
 
 const Footer = () => {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
 
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -22,6 +22,8 @@ const Footer = () => {
         { path: '/about', label: t.nav.about },
         { path: '/skills', label: t.nav.skills },
         { path: '/projects', label: t.nav.projects },
+        { path: '/experience', label: t.nav.experience },
+        { path: '/education', label: t.nav.education },
         { path: '/contact', label: t.nav.contact }
     ];
 
@@ -32,7 +34,7 @@ const Footer = () => {
                     <div className="footer-section">
                         <div className="footer-logo">
                             <span className="logo-text">&lt;</span>
-                            <span className="logo-name">IT Engineer</span>
+                            <span className="logo-name">{language === 'ar' ? 'أنس جلال' : 'Anas Galal'}</span>
                             <span className="logo-text">/&gt;</span>
                         </div>
                         <p className="footer-description">
@@ -55,7 +57,7 @@ const Footer = () => {
                     </div>
 
                     <div className="footer-section">
-                        <h4 className="footer-title">{t.nav.home}</h4>
+                        <h4 className="footer-title">{t.footer.quickLinks}</h4>
                         <div className="footer-links">
                             {quickLinks.map((link, index) => (
                                 <Link key={index} to={link.path} className="footer-link">
@@ -68,17 +70,18 @@ const Footer = () => {
                     <div className="footer-section">
                         <h4 className="footer-title">{t.contact.info}</h4>
                         <div className="footer-info">
-                            <p>Email: anasxanoos@gmail.com</p>
-                            <p>Phone: +967776455364</p>
+                            <p>{t.contact.emailLabel}: anasxanoos@gmail.com</p>
+                            <p>{t.contact.phoneLabel}: +967776455364</p>
+                            <p>{t.contact.locationLabel}: {t.footer.location}</p>
                         </div>
                     </div>
                 </div>
 
                 <div className="footer-bottom">
                     <p className="copyright">
-                        © {new Date().getFullYear()} IT Engineer. All rights reserved.
+                        © {new Date().getFullYear()} {t.footer.copyright}
                     </p>
-                    <button className="back-to-top" onClick={scrollToTop} aria-label="Back to top">
+                    <button className="back-to-top" onClick={scrollToTop} aria-label={t.common.backToTop}>
                         <FiArrowUp />
                     </button>
                 </div>
