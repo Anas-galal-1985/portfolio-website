@@ -11,7 +11,8 @@ import {
     SiFastapi, SiStreamlit, SiOpencv, SiFirebase,
     SiAndroidstudio, SiC
 } from 'react-icons/si';
-import { FiTerminal, FiBox, FiTarget, FiCpu, FiDatabase } from 'react-icons/fi';
+import { FiTerminal, FiTarget, FiCpu, FiDatabase } from 'react-icons/fi';
+import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import './Skills.css';
 
@@ -74,30 +75,47 @@ const Skills = () => {
         <div className="skills-page">
             <section className="section">
                 <div className="container">
-                    <div className="section-title">
+                    <motion.div
+                        className="section-title"
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.15 }}
+                        transition={{ duration: 0.5 }}
+                    >
                         <h1>{t.skills.title}</h1>
                         <p className="subtitle">{t.skills.subtitle}</p>
-                    </div>
+                    </motion.div>
 
                     <div className="skills-container">
                         {Object.entries(skillsData).map(([category, skills]) => (
-                            <div key={category} className="skill-category">
+                            <motion.div
+                                key={category}
+                                className="skill-category"
+                                initial={{ opacity: 0, y: 24 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.15 }}
+                                transition={{ duration: 0.45 }}
+                            >
                                 <h2 className="category-title">{t.skills.categories[category]}</h2>
                                 <div className="skills-grid">
                                     {skills.map((skill, index) => (
-                                        <div
+                                        <motion.div
                                             key={index}
                                             className="skill-card card"
                                             style={{ '--skill-color': skill.color }}
+                                            initial={{ opacity: 0, y: 20 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            viewport={{ once: true, amount: 0.15 }}
+                                            transition={{ duration: 0.35, delay: Math.min(index * 0.03, 0.25) }}
                                         >
                                             <div className="skill-icon" style={{ color: skill.color }}>
                                                 {skill.icon}
                                             </div>
                                             <h3 className="skill-name">{skill.name}</h3>
-                                        </div>
+                                        </motion.div>
                                     ))}
                                 </div>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>

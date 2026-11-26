@@ -14,15 +14,59 @@ export const translations = {
         // Home Page
         home: {
             greeting: 'Hello, I\'m',
-            name: 'Anas Galal Yousef',
+            name: 'Anas Galal Al-Absi',
             title: 'Software & IT Engineer',
+            availability: 'Available for Freelance & Projects',
+            roles: [
+                'Software Engineer',
+                'Full-Stack Developer',
+                'Flutter Mobile Developer',
+                'AI & Computer Vision Specialist'
+            ],
             subtitle: 'Specialized in building high-quality, scalable technical solutions following software engineering best practices',
             description: 'A software engineer specializing in developing high-quality, scalable technical solutions following software engineering best practices. I combine web and mobile application development, artificial intelligence and computer vision, and database management.',
             viewProjects: 'View Projects',
             contactMe: 'Contact Me',
             downloadCV: 'Download CV',
             downloadCvAts: 'Download CV (ATS Version)',
-            downloadCvVisual: 'Download CV (Visual Version)'
+            downloadCvVisual: 'Download CV (Visual Version)',
+            stats: [
+                { value: 10, prefix: '+', label: 'Software & AI Projects' },
+                { value: 40, suffix: '%', label: 'System Performance Boost' },
+                { value: 5, suffix: '+', label: 'Developers Led' },
+                { value: 100, suffix: 'K+', label: 'AI Dataset Records Processed' }
+            ],
+            servicesTitle: 'My Services',
+            servicesSubtitle: 'End-to-End Technical Solutions from Concept to Deployment',
+            services: [
+                {
+                    title: 'Full-Stack Web Development',
+                    description: 'Building fast, scalable web platforms and commercial sites using React, Node.js, Django, and PHP.'
+                },
+                {
+                    title: 'Mobile App Development',
+                    description: 'Designing and developing high-performance offline & online apps for Android and iOS using Flutter.'
+                },
+                {
+                    title: 'AI & Computer Vision',
+                    description: 'Developing facial recognition systems, object detection (YOLO), and natural language processing (NLP).'
+                },
+                {
+                    title: 'Backend & Database Engineering',
+                    description: 'Architecting PostgreSQL, MySQL, and MongoDB databases, building RESTful APIs and scalable microservices.'
+                },
+                {
+                    title: 'DevOps & Optimization',
+                    description: 'Configuring Docker containers, implementing CI/CD pipelines, and optimizing overall software efficiency.'
+                },
+                {
+                    title: 'Custom Business Software',
+                    description: 'Building custom data analytics tools and robust desktop applications using Python, C#, and C++.'
+                }
+            ],
+            featuredProjectsTitle: 'Featured Projects',
+            featuredProjectsSubtitle: 'Handpicked selection of my recent engineering & AI work',
+            viewAllProjects: 'View All Projects'
         },
 
         // About Page
@@ -30,6 +74,8 @@ export const translations = {
             title: 'About Me',
             subtitle: 'Get to know me better',
             bio: 'A software engineer striving to develop scalable, high-quality technical solutions following software engineering best practices — from system analysis and design to writing clean code. I have hands-on experience in mobile and web application development, building AI systems and data processing, with a strong ability to work within teams and lead them to deliver projects from design through deployment.',
+            freelanceLabel: 'Freelance',
+            freelanceStatus: 'Available',
             education: 'Education',
             educationDegree: 'B.Sc. in Information Technology / Computer Science',
             educationInstitution: 'Ibb University • 2022-2026',
@@ -90,7 +136,9 @@ export const translations = {
             viewCode: 'View Code',
             viewSite: 'Visit Website',
             viewDocs: 'Documentation',
-            technologies: 'Technologies Used'
+            technologies: 'Technologies Used',
+            quickPreview: 'Quick Preview',
+            closeModal: 'Close'
         },
 
         // Experience Page
@@ -134,7 +182,7 @@ export const translations = {
         // Footer
         footer: {
             quickLinks: 'Quick Links',
-            copyright: 'Anas Galal Yousef. All rights reserved.',
+            copyright: 'Anas Galal Al-Absi. All rights reserved.',
             location: 'Al-Sabel, Ibb, Yemen'
         },
 
@@ -164,15 +212,59 @@ export const translations = {
         // Home Page
         home: {
             greeting: 'مرحباً، أنا',
-            name: 'أنس جلال يوسف',
+            name: 'أنس جلال العبسي',
             title: 'مهندس برمجيات وتقنية معلومات',
+            availability: 'متاح للعمل الحر والمشاريع',
+            roles: [
+                'مهندس برمجيات',
+                'مطور ويب متكامل (Full-Stack)',
+                'مطور تطبيقات موبايل (Flutter)',
+                'متخصص ذكاء اصطناعي ورؤية حاسوبية'
+            ],
             subtitle: 'متخصص في بناء حلول تقنية عالية الجودة وقابلة للتوسع وفق أفضل ممارسات هندسة البرمجيات',
             description: 'مهندس برمجيات متخصص في تطوير حلول تقنية عالية الجودة وقابلة للتوسع وفق أفضل ممارسات هندسة البرمجيات، أجمع بين تطوير تطبيقات الويب والموبايل، والذكاء الاصطناعي والرؤية الحاسوبية، وإدارة قواعد البيانات.',
             viewProjects: 'عرض المشاريع',
             contactMe: 'تواصل معي',
             downloadCV: 'تحميل السيرة الذاتية',
             downloadCvAts: 'السيرة الذاتية (نسخة ATS)',
-            downloadCvVisual: 'السيرة الذاتية (النسخة التصميمية)'
+            downloadCvVisual: 'السيرة الذاتية (النسخة التصميمية)',
+            stats: [
+                { value: 10, prefix: '+', label: 'مشاريع برمجية وذكاء اصطناعي' },
+                { value: 40, suffix: '%', label: 'تحسين أداء الأنظمة' },
+                { value: 5, suffix: '+', label: 'مطورين ضمن فرق العمل' },
+                { value: 100, suffix: 'K+', label: 'سجل بيانات معالج للذكاء الاصطناعي' }
+            ],
+            servicesTitle: 'خدماتي',
+            servicesSubtitle: 'حلول تقنية متكاملة من الفكرة إلى النشر والتطوير',
+            services: [
+                {
+                    title: 'تطوير الويب الشامل',
+                    description: 'بناء مواقع ومنصات تجارية متكاملة وسريعة باستخدام React وNode.js وDjango وPHP.'
+                },
+                {
+                    title: 'تطوير تطبيقات الموبايل',
+                    description: 'تصميم وبرمجة تطبيقات أوفلاين وأونلاين عالية الأداء لنظامي Android وiOS باستخدام Flutter.'
+                },
+                {
+                    title: 'حلول الذكاء الاصطناعي والرؤية الحاسوبية',
+                    description: 'تطوير أنظمة التعرف على الوجوه، وكشف الكائنات (YOLO)، ومعالجة اللغات الطبيعية (NLP).'
+                },
+                {
+                    title: 'هندسة الخلفيات وقواعد البيانات',
+                    description: 'تصميم قواعد بيانات PostgreSQL وMySQL وMongoDB وبناء واجهات برمجية (RESTful APIs) وخدمات مصغرة.'
+                },
+                {
+                    title: 'أتمتة النشر وتحسين الأداء',
+                    description: 'تجهيز حاويات Docker، وتطبيق خطوط CI/CD، ورفع كفاءة وسرعة الأنظمة البرمجية.'
+                },
+                {
+                    title: 'برامج سطح المكتب والأنظمة المخصصة',
+                    description: 'تطوير أدوات تحليل البيانات وبرامج سطح المكتب المخصصة باستخدام Python وC# وC++.'
+                }
+            ],
+            featuredProjectsTitle: 'أبرز المشاريع',
+            featuredProjectsSubtitle: 'نماذج منتقاة من أحدث أعمالي البرمجية والذكية',
+            viewAllProjects: 'عرض جميع المشاريع'
         },
 
         // About Page
@@ -180,6 +272,8 @@ export const translations = {
             title: 'عني',
             subtitle: 'تعرف عليّ أكثر',
             bio: 'مهندس برمجيات أسعى لتطوير حلول تقنية قابلة للتوسع وعالية الجودة وفق أفضل ممارسات هندسة البرمجيات من تحليل وتصميم النظم وكتابة الكود النظيف. أمتلك خبرة عملية في تطوير تطبيقات الموبايل والمواقع الإلكترونية، وبناء أنظمة الذكاء الاصطناعي ومعالجة البيانات، مع قدرة عالية على العمل ضمن فرق وقيادتها لتنفيذ المشاريع من التصميم وحتى النشر.',
+            freelanceLabel: 'العمل الحر',
+            freelanceStatus: 'متاح',
             education: 'التعليم',
             educationDegree: 'بكالوريوس تقنية معلومات / علوم حاسوب',
             educationInstitution: 'جامعة إب • 2022-2026',
@@ -240,7 +334,9 @@ export const translations = {
             viewCode: 'عرض الكود',
             viewSite: 'زيارة الموقع',
             viewDocs: 'التوثيق',
-            technologies: 'التقنيات المستخدمة'
+            technologies: 'التقنيات المستخدمة',
+            quickPreview: 'معاينة سريعة',
+            closeModal: 'إغلاق'
         },
 
         // Experience Page
@@ -284,7 +380,7 @@ export const translations = {
         // Footer
         footer: {
             quickLinks: 'روابط سريعة',
-            copyright: 'أنس جلال يوسف. جميع الحقوق محفوظة.',
+            copyright: 'أنس جلال العبسي. جميع الحقوق محفوظة.',
             location: 'السبل، إب، اليمن'
         },
 

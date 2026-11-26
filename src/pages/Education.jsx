@@ -1,5 +1,6 @@
 import React from 'react';
 import { FiBook, FiAward, FiCheckCircle } from 'react-icons/fi';
+import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import './Education.css';
 
@@ -56,14 +57,27 @@ const Education = () => {
         <div className="education-page">
             <section className="section">
                 <div className="container">
-                    <div className="section-title">
+                    <motion.div
+                        className="section-title"
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.15 }}
+                        transition={{ duration: 0.5 }}
+                    >
                         <h1>{t.education.title}</h1>
                         <p className="subtitle">{t.education.subtitle}</p>
-                    </div>
+                    </motion.div>
 
                     <div className="education-grid">
                         {educationData.map((item, index) => (
-                            <div key={index} className="education-card card">
+                            <motion.div
+                                key={index}
+                                className="education-card card"
+                                initial={{ opacity: 0, y: 24 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.15 }}
+                                transition={{ duration: 0.45, delay: index * 0.08 }}
+                            >
                                 <div className="card-icon-wrapper">
                                     {item.type === 'degree' && <FiBook />}
                                     {item.type === 'certification' && <FiAward />}
@@ -76,7 +90,7 @@ const Education = () => {
                                     <h4 className="institution">{item.institution}</h4>
                                     {item.description && <p className="description">{item.description}</p>}
                                 </div>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>

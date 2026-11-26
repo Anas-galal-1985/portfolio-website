@@ -38,6 +38,39 @@
     opacity: 0;
 }
 
+/* Availability Badge */
+.availability-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    color: #10b981;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10b981;
+    flex-shrink: 0;
+    animation: pulseDot 2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.55);
+    }
+    50% {
+        box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+    }
+}
+
 .greeting {
     font-size: 1.2rem;
     color: var(--primary-color);
@@ -59,8 +92,39 @@
     display: inline-block;
 }
 
+/* Typing Effect */
+.typing-container {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: var(--spacing-xs);
+    min-height: 2.1rem;
+}
+
+.typing-text {
+    font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.typing-cursor {
+    font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+    font-weight: 400;
+    color: var(--primary-color);
+    animation: blinkCursor 1s step-end infinite;
+}
+
+@keyframes blinkCursor {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
 .hero-subtitle {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-size: clamp(1.4rem, 2.8vw, 2.2rem);
     color: var(--text-secondary);
     font-weight: 600;
     margin-bottom: var(--spacing-md);
@@ -215,17 +279,57 @@
 }
 
 @keyframes scroll {
-
-    0%,
-    100% {
+    0%, 100% {
         transform: translateX(-50%) translateY(0);
         opacity: 1;
     }
-
     50% {
         transform: translateX(-50%) translateY(15px);
         opacity: 0;
     }
+}
+
+/* Stats Section */
+.stats-section {
+    padding: var(--spacing-xl) 0;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.stat-card {
+    text-align: center;
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+}
+
+.stat-number {
+    font-size: clamp(2rem, 4vw, 2.85rem);
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.15;
+    margin-bottom: var(--spacing-xs);
+    direction: ltr;
+    display: inline-block;
+}
+
+.stat-label {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    line-height: 1.5;
 }
 
 /* Features Section */
@@ -247,6 +351,10 @@
     position: relative;
 }
 
+.feature-card:hover {
+    transform: translateY(-4px);
+}
+
 .feature-card::before {
     background: linear-gradient(135deg, var(--feature-color), transparent);
 }
@@ -262,74 +370,128 @@
     color: var(--text-primary);
 }
 
-/* Responsive */
-@media (max-width: 968px) {
-    .hero-content {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-xl);
-    }
-
-    .hero-visual {
-        order: -1;
-    }
-
-    .visual-container {
-        height: 400px;
-    }
-
-    .profile-circle {
-        width: 250px;
-        height: 250px;
-    }
-
-    .main-icon {
-        font-size: 6rem;
-    }
-
-    .floating-card {
-        padding: var(--spacing-sm);
-        font-size: 0.9rem;
-    }
-
-    .card-icon {
-        font-size: 1.2rem;
-    }
+/* Services Section */
+.services-section {
+    padding: var(--spacing-2xl) 0;
 }
 
-@media (max-width: 768px) {
-    .hero-section {
-        padding-top: 100px;
-    }
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+}
 
-    .hero-description {
-        font-size: 1rem;
-    }
+.service-card {
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
 
-    .hero-buttons {
-        flex-direction: column;
-    }
+.service-card:hover {
+    transform: translateY(-4px);
+}
 
-    .hero-buttons .btn {
-        width: 100%;
-        justify-content: center;
-    }
+.service-icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--border-radius-md);
+    background: rgba(37, 99, 235, 0.12);
+    border: 1px solid rgba(37, 99, 235, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-xs);
+}
 
-    .visual-container {
-        height: 350px;
-    }
+.service-icon {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
 
-    .profile-circle {
-        width: 200px;
-        height: 200px;
-    }
+.service-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
 
-    .main-icon {
-        font-size: 4rem;
-    }
+.service-description {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
 
-    .floating-card {
-        display: none;
-    }
+/* Featured Projects Section */
+.featured-projects-section {
+    padding: var(--spacing-2xl) 0;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.featured-project-card {
+    overflow: hidden;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.featured-project-card:hover {
+    transform: translateY(-4px);
+}
+
+.featured-card-body {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    flex: 1;
+}
+
+.featured-card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.featured-card-desc {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    flex: 1;
+}
+
+.featured-project-card .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: var(--spacing-xs);
+}
+
+.featured-project-card .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    font-weight: 500;
+}
+
+.view-all-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.view-all-btn {
+    gap: 0.5rem;
 }
 
 /* CV Dropdown */
@@ -398,7 +560,6 @@
         opacity: 0;
         transform: translateY(-8px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -410,7 +571,6 @@
         opacity: 0;
         transform: translateY(8px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -494,7 +654,83 @@
     border-color: var(--primary-color);
 }
 
+/* Responsive */
+@media (max-width: 1100px) {
+    .stats-grid,
+    .services-grid,
+    .featured-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 968px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .hero-visual {
+        order: -1;
+    }
+
+    .visual-container {
+        height: 400px;
+    }
+
+    .profile-circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .main-icon {
+        font-size: 6rem;
+    }
+
+    .floating-card {
+        padding: var(--spacing-sm);
+        font-size: 0.9rem;
+    }
+
+    .card-icon {
+        font-size: 1.2rem;
+    }
+}
+
 @media (max-width: 768px) {
+    .hero-section {
+        padding-top: 100px;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .visual-container {
+        height: 350px;
+    }
+
+    .profile-circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .main-icon {
+        font-size: 4rem;
+    }
+
+    .floating-card {
+        display: none;
+    }
+
     .cv-dropdown {
         width: 100%;
     }
@@ -508,5 +744,14 @@
         left: 0;
         right: 0;
         min-width: 100%;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-grid,
+    .featured-grid {
+        grid-template-columns: 1fr;
     }
 }

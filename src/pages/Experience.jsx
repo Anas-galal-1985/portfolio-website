@@ -1,5 +1,6 @@
 import React from 'react';
-import { FiBriefcase, FiCalendar } from 'react-icons/fi';
+import { FiCalendar } from 'react-icons/fi';
+import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import './Experience.css';
 
@@ -70,14 +71,27 @@ const Experience = () => {
         <div className="experience-page">
             <section className="section">
                 <div className="container">
-                    <div className="section-title">
+                    <motion.div
+                        className="section-title"
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.15 }}
+                        transition={{ duration: 0.5 }}
+                    >
                         <h1>{t.experience.title}</h1>
                         <p className="subtitle">{t.experience.subtitle}</p>
-                    </div>
+                    </motion.div>
 
                     <div className="timeline">
-                        {experiences.map((exp) => (
-                            <div key={exp.id} className="timeline-item">
+                        {experiences.map((exp, index) => (
+                            <motion.div
+                                key={exp.id}
+                                className="timeline-item"
+                                initial={{ opacity: 0, y: 28 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.15 }}
+                                transition={{ duration: 0.45, delay: index * 0.1 }}
+                            >
                                 <div className="timeline-marker"></div>
                                 <div className="timeline-content card">
                                     <div className="timeline-header">
@@ -97,7 +111,7 @@ const Experience = () => {
                                         ))}
                                     </ul>
                                 </div>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FiMail, FiPhone, FiMapPin, FiSend, FiGithub, FiLinkedin } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import './Contact.css';
 
@@ -63,13 +64,25 @@ const Contact = () => {
         <div className="contact-page">
             <section className="section">
                 <div className="container">
-                    <div className="section-title">
+                    <motion.div
+                        className="section-title"
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.15 }}
+                        transition={{ duration: 0.5 }}
+                    >
                         <h1>{t.contact.title}</h1>
                         <p className="subtitle">{t.contact.subtitle}</p>
-                    </div>
+                    </motion.div>
 
                     <div className="contact-content">
-                        <div className="contact-info card">
+                        <motion.div
+                            className="contact-info card"
+                            initial={{ opacity: 0, y: 24 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.15 }}
+                            transition={{ duration: 0.45 }}
+                        >
                             <h3>{t.contact.info}</h3>
 
                             <div className="info-item">
@@ -143,9 +156,16 @@ const Contact = () => {
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        <form className="contact-form card" onSubmit={handleSubmit}>
+                        <motion.form
+                            className="contact-form card"
+                            onSubmit={handleSubmit}
+                            initial={{ opacity: 0, y: 24 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.15 }}
+                            transition={{ duration: 0.45, delay: 0.1 }}
+                        >
                             <div className="form-group">
                                 <label htmlFor="name">{t.contact.name}</label>
                                 <input
@@ -214,7 +234,7 @@ const Contact = () => {
                                     </>
                                 )}
                             </button>
-                        </form>
+                        </motion.form>
                     </div>
                 </div>
             </section>
