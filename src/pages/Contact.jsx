@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FiMail, FiPhone, FiMapPin, FiSend, FiGithub, FiLinkedin } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
 import { useLanguage } from '../context/LanguageContext';
 import './Contact.css';
 
@@ -121,6 +122,15 @@ const Contact = () => {
                                         aria-label="LinkedIn"
                                     >
                                         <FiLinkedin />
+                                    </a>
+                                    <a
+                                        href="https://wa.me/967776455364"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="social-link"
+                                        aria-label="WhatsApp"
+                                    >
+                                        <FaWhatsapp />
                                     </a>
                                     <a
                                         href="https://mail.google.com/mail/?view=cm&fs=1&to=anasxanoos@gmail.com"

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiGithub, FiLinkedin, FiMail, FiArrowUp } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
 import { useLanguage } from '../context/LanguageContext';
 import './Footer.css';
 
@@ -14,6 +15,7 @@ const Footer = () => {
     const socialLinks = [
         { icon: <FiGithub />, url: 'https://github.com/Anas-galal-1985', label: 'GitHub' },
         { icon: <FiLinkedin />, url: 'https://www.linkedin.com/in/anas-galal-7b7937439', label: 'LinkedIn' },
+        { icon: <FaWhatsapp />, url: 'https://wa.me/967776455364', label: 'WhatsApp' },
         { icon: <FiMail />, url: 'https://mail.google.com/mail/?view=cm&fs=1&to=anasxanoos@gmail.com', label: 'Email' }
     ];
 
