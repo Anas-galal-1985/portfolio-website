@@ -1,6 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowRight, FiDownload, FiCode, FiCpu, FiDatabase, FiSmartphone } from 'react-icons/fi';
+import {
+    FiArrowRight,
+    FiDownload,
+    FiCode,
+    FiCpu,
+    FiDatabase,
+    FiSmartphone,
+    FiChevronDown,
+    FiFileText,
+    FiFile
+} from 'react-icons/fi';
 import MyPhoto from '../assets/My_photo.jpg';
 import { useLanguage } from '../context/LanguageContext';
 import './Home.css';
@@ -8,9 +18,45 @@ import './Home.css';
 const Home = () => {
     const { t, language } = useLanguage();
     const [isVisible, setIsVisible] = useState(false);
+    const [isCvDropdownOpen, setIsCvDropdownOpen] = useState(false);
+    const [dropUp, setDropUp] = useState(false);
+    const cvDropdownRef = useRef(null);
+
+    const handleToggleDropdown = () => {
+        if (!isCvDropdownOpen && cvDropdownRef.current) {
+            const rect = cvDropdownRef.current.getBoundingClientRect();
+            const spaceBelow = window.innerHeight - rect.bottom;
+            // If space below is less than 170px, open upwards so it never overlaps other content
+            if (spaceBelow < 170) {
+                setDropUp(true);
+            } else {
+                setDropUp(false);
+            }
+        }
+        setIsCvDropdownOpen(prev => !prev);
+    };
 
     useEffect(() => {
         setIsVisible(true);
+    }, []);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (cvDropdownRef.current && !cvDropdownRef.current.contains(event.target)) {
+                setIsCvDropdownOpen(false);
+            }
+        };
+        const handleKeyDown = (event) => {
+            if (event.key === 'Escape') {
+                setIsCvDropdownOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener('keydown', handleKeyDown);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('keydown', handleKeyDown);
+        };
     }, []);
 
     const features = language === 'ar' ? [
@@ -46,16 +92,51 @@ const Home = () => {
                                 <Link to="/contact" className="btn btn-secondary">
                                     {t.home.contactMe}
                                 </Link>
-                                <a
-                                    href="/Anas_Galal_CV.pdf"
-                                    download="Anas_Galal_CV.pdf"
-                                    className="btn btn-secondary"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <FiDownload />
-                                    {t.home.downloadCV}
-                                </a>
+                                <div className="cv-dropdown" ref={cvDropdownRef}>
+                                    <button
+                                        type="button"
+                                        className={`btn btn-secondary cv-dropdown-btn ${isCvDropdownOpen ? 'active' : ''}`}
+                                        onClick={handleToggleDropdown}
+                                        aria-expanded={isCvDropdownOpen}
+                                        aria-haspopup="true"
+                                    >
+                                        <FiDownload />
+                                        <span>{t.home.downloadCV}</span>
+                                        <FiChevronDown className={`cv-dropdown-arrow ${isCvDropdownOpen ? 'open' : ''}`} />
+                                    </button>
+                                    {isCvDropdownOpen && (
+                                        <div className={`cv-dropdown-menu ${dropUp ? 'drop-up' : ''}`}>
+                                            <a
+                                                href="/Anas_Galal_ATS_CV.pdf"
+                                                download="Anas_Galal_ATS_CV.pdf"
+                                                className="cv-dropdown-item"
+                                                onClick={() => setIsCvDropdownOpen(false)}
+                                            >
+                                                <div className="cv-item-icon-wrapper">
+                                                    <FiFileText className="cv-item-icon" />
+                                                </div>
+                                                <div className="cv-item-content">
+                                                    <span className="cv-item-title">{t.home.downloadCvAts}</span>
+                                                    <span className="cv-item-badge">ATS</span>
+                                                </div>
+                                            </a>
+                                            <a
+                                                href="/Anas_Galal_CV.pdf"
+                                                download="Anas_Galal_CV.pdf"
+                                                className="cv-dropdown-item"
+                                                onClick={() => setIsCvDropdownOpen(false)}
+                                            >
+                                                <div className="cv-item-icon-wrapper">
+                                                    <FiFile className="cv-item-icon" />
+                                                </div>
+                                                <div className="cv-item-content">
+                                                    <span className="cv-item-title">{t.home.downloadCvVisual}</span>
+                                                    <span className="cv-item-badge">PDF</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                         </div>
 

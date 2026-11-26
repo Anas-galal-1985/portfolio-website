@@ -20,7 +20,9 @@ export const translations = {
             description: 'A software engineer specializing in developing high-quality, scalable technical solutions following software engineering best practices. I combine web and mobile application development, artificial intelligence and computer vision, and database management.',
             viewProjects: 'View Projects',
             contactMe: 'Contact Me',
-            downloadCV: 'Download CV'
+            downloadCV: 'Download CV',
+            downloadCvAts: 'Download CV (ATS Version)',
+            downloadCvVisual: 'Download CV (Visual Version)'
         },
 
         // About Page
@@ -168,7 +170,9 @@ export const translations = {
             description: 'مهندس برمجيات متخصص في تطوير حلول تقنية عالية الجودة وقابلة للتوسع وفق أفضل ممارسات هندسة البرمجيات، أجمع بين تطوير تطبيقات الويب والموبايل، والذكاء الاصطناعي والرؤية الحاسوبية، وإدارة قواعد البيانات.',
             viewProjects: 'عرض المشاريع',
             contactMe: 'تواصل معي',
-            downloadCV: 'تحميل السيرة الذاتية'
+            downloadCV: 'تحميل السيرة الذاتية',
+            downloadCvAts: 'السيرة الذاتية (نسخة ATS)',
+            downloadCvVisual: 'السيرة الذاتية (النسخة التصميمية)'
         },
 
         // About Page
