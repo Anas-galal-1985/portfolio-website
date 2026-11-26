@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiSend, FiGithub, FiLinkedin } from 'react-icons/fi';
 import { useLanguage } from '../context/LanguageContext';
 import './Contact.css';
 
@@ -72,6 +72,37 @@ const Contact = () => {
                                 <div className="info-details">
                                     <h4>{t.contact.locationLabel}</h4>
                                     <p>{t.contact.locationValue}</p>
+                                </div>
+                            </div>
+
+                            <div className="contact-social">
+                                <h4>{t.contact.social}</h4>
+                                <div className="social-links">
+                                    <a
+                                        href="https://github.com/Anas-galal-1985"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="social-link"
+                                        aria-label="GitHub"
+                                    >
+                                        <FiGithub />
+                                    </a>
+                                    <a
+                                        href="https://www.linkedin.com/in/anas-galal-7b7937439"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="social-link"
+                                        aria-label="LinkedIn"
+                                    >
+                                        <FiLinkedin />
+                                    </a>
+                                    <a
+                                        href="mailto:anasxanoos@gmail.com"
+                                        className="social-link"
+                                        aria-label="Email"
+                                    >
+                                        <FiMail />
+                                    </a>
                                 </div>
                             </div>
                         </div>

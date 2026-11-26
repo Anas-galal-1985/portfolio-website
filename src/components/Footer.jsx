@@ -12,8 +12,8 @@ const Footer = () => {
     };
 
     const socialLinks = [
-        { icon: <FiGithub />, url: 'https://github.com', label: 'GitHub' },
-        { icon: <FiLinkedin />, url: 'https://linkedin.com', label: 'LinkedIn' },
+        { icon: <FiGithub />, url: 'https://github.com/Anas-galal-1985', label: 'GitHub' },
+        { icon: <FiLinkedin />, url: 'https://www.linkedin.com/in/anas-galal-7b7937439', label: 'LinkedIn' },
         { icon: <FiMail />, url: 'mailto:anasxanoos@gmail.com', label: 'Email' }
     ];
 

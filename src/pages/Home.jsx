@@ -46,10 +46,16 @@ const Home = () => {
                                 <Link to="/contact" className="btn btn-secondary">
                                     {t.home.contactMe}
                                 </Link>
-                                <button className="btn btn-secondary">
+                                <a
+                                    href="/Anas_Galal_CV.pdf"
+                                    download="Anas_Galal_CV.pdf"
+                                    className="btn btn-secondary"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     <FiDownload />
                                     {t.home.downloadCV}
-                                </button>
+                                </a>
                             </div>
                         </div>
 
