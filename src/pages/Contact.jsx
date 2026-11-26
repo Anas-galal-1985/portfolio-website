@@ -25,39 +25,36 @@ const Contact = () => {
         setStatus('sending');
 
         try {
-            const response = await fetch('https://formsubmit.co/ajax/anasxanoos@gmail.com', {
+            const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
                 body: JSON.stringify({
+                    access_key: '60b6fefe-9045-46a6-82ba-848ae5cc2efa',
                     name: formData.name,
                     email: formData.email,
                     message: formData.message,
-                    _subject: 'رسالة جديدة من موقعك الشخصي',
-                    _template: 'table'
+                    subject: 'رسالة جديدة من موقعك الشخصي',
+                    from_name: 'Anas Galal Portfolio'
                 })
             });
 
-            if (response.ok) {
-                const data = await response.json();
-                if (data.success === 'true' || data.success === true || response.status === 200) {
-                    setStatus('success');
-                    setFormData({ name: '', email: '', message: '' });
-                    setTimeout(() => setStatus(''), 5000);
-                } else {
-                    setStatus('error');
-                    setTimeout(() => setStatus(''), 5000);
-                }
+            const result = await response.json();
+
+            if (result.success === true) {
+                setStatus('success');
+                setFormData({ name: '', email: '', message: '' });
+                setTimeout(() => setStatus(''), 6000);
             } else {
                 setStatus('error');
-                setTimeout(() => setStatus(''), 5000);
+                setTimeout(() => setStatus(''), 6000);
             }
         } catch (error) {
             console.error('Error sending message:', error);
             setStatus('error');
-            setTimeout(() => setStatus(''), 5000);
+            setTimeout(() => setStatus(''), 6000);
         }
     };
 
@@ -192,7 +189,7 @@ const Contact = () => {
 
                             <button
                                 type="submit"
-                                className={`btn btn-primary submit-btn ${status}`}
+                                className="btn btn-primary submit-btn"
                                 disabled={status === 'sending'}
                             >
                                 {status === 'sending' ? (
@@ -200,10 +197,6 @@ const Contact = () => {
                                         <span className="spinner"></span>
                                         <span>{t.contact.sending}</span>
                                     </>
-                                ) : status === 'success' ? (
-                                    t.contact.success
-                                ) : status === 'error' ? (
-                                    t.contact.error
                                 ) : (
                                     <>
                                         {t.contact.send}
